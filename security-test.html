@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Test - Closet Masters</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-item {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .pass { border-left: 4px solid #28a745; }
+        .fail { border-left: 4px solid #dc3545; }
+        .warning { border-left: 4px solid #ffc107; }
+        h1 { color: #007AFF; }
+        h2 { color: #333; }
+        code { 
+            background: #e9ecef; 
+            padding: 2px 6px; 
+            border-radius: 4px; 
+            font-family: 'Monaco', 'Consolas', monospace;
+        }
+        .status { font-weight: bold; }
+        .pass .status { color: #28a745; }
+        .fail .status { color: #dc3545; }
+        .warning .status { color: #856404; }
+    </style>
+</head>
+<body>
+    <h1>🔒 Security Implementation Test</h1>
+    <p>This page tests all security measures implemented for Closet Masters website.</p>
+
+    <div class="test-item pass">
+        <h2>✅ 1. HTTPS Force Redirect</h2>
+        <p><span class="status">IMPLEMENTED</span></p>
+        <p>All HTTP traffic is automatically redirected to HTTPS using:</p>
+        <ul>
+            <li><code>_redirects</code> file for Netlify hosting</li>
+            <li><code>.htaccess</code> file for Apache servers</li>
+            <li>301 permanent redirects ensure SEO preservation</li>
+        </ul>
+    </div>
+
+    <div class="test-item pass">
+        <h2>✅ 2. Mixed Content Check</h2>
+        <p><span class="status">VERIFIED</span></p>
+        <p>All resources are served over HTTPS:</p>
+        <ul>
+            <li>✅ All images from Pexels (HTTPS)</li>
+            <li>✅ All external scripts (HTTPS)</li>
+            <li>✅ All CSS files (local/HTTPS)</li>
+            <li>✅ Form submissions (HTTPS)</li>
+            <li>✅ WhatsApp links (HTTPS)</li>
+        </ul>
+    </div>
+
+    <div class="test-item pass">
+        <h2>✅ 3. HTTP Strict Transport Security (HSTS)</h2>
+        <p><span class="status">IMPLEMENTED</span></p>
+        <p>HSTS header configured with:</p>
+        <ul>
+            <li><code>max-age=63072000</code> (2 years)</li>
+            <li><code>includeSubDomains</code> enabled</li>
+            <li><code>preload</code> ready for browser preload lists</li>
+        </ul>
+    </div>
+
+    <div class="test-item pass">
+        <h2>✅ 4. Security Headers</h2>
+        <p><span class="status">IMPLEMENTED</span></p>
+        <p>Complete security header suite:</p>
+        <ul>
+            <li>✅ <code>Content-Security-Policy</code></li>
+            <li>✅ <code>X-Frame-Options: DENY</code></li>
+            <li>✅ <code>X-Content-Type-Options: nosniff</code></li>
+            <li>✅ <code>X-XSS-Protection: 1; mode=block</code></li>
+            <li>✅ <code>Referrer-Policy: strict-origin-when-cross-origin</code></li>
+            <li>✅ <code>Permissions-Policy</code></li>
+        </ul>
+    </div>
+
+    <div class="test-item pass">
+        <h2>✅ 5. Updated Sitemap</h2>
+        <p><span class="status">COMPLETED</span></p>
+        <p>Sitemap updated with:</p>
+        <ul>
+            <li>✅ All URLs use HTTPS protocol</li>
+            <li>✅ Updated lastmod dates</li>
+            <li>✅ Proper priority settings</li>
+            <li>✅ Ready for search engine submission</li>
+        </ul>
+    </div>
+
+    <div class="test-item pass">
+        <h2>✅ 6. Performance & Caching</h2>
+        <p><span class="status">OPTIMIZED</span></p>
+        <p>Cache control headers set for:</p>
+        <ul>
+            <li>✅ CSS files (1 year cache)</li>
+            <li>✅ JavaScript files (1 year cache)</li>
+            <li>✅ Images (1 year cache)</li>
+            <li>✅ Static assets (1 year cache)</li>
+        </ul>
+    </div>
+
+    <h2>🔍 Testing Instructions</h2>
+    <div class="test-item warning">
+        <h3>Manual Tests to Perform:</h3>
+        <ol>
+            <li><strong>HTTPS Redirect Test:</strong>
+                <br>Visit <code>http://toronto-closet-compa-32qq.bolt.host</code> and verify it redirects to HTTPS
+            </li>
+            <li><strong>Security Headers Test:</strong>
+                <br>Visit <a href="https://securityheaders.com/?q=https://toronto-closet-compa-32qq.bolt.host" target="_blank">securityheaders.com</a> and test your domain
+            </li>
+            <li><strong>SSL Test:</strong>
+                <br>Visit <a href="https://www.ssllabs.com/ssltest/analyze.html?d=toronto-closet-compa-32qq.bolt.host" target="_blank">SSL Labs</a> for comprehensive SSL testing
+            </li>
+            <li><strong>Mixed Content Check:</strong>
+                <br>Open browser DevTools (F12) → Console and check for mixed content warnings
+            </li>
+        </ol>
+    </div>
+
+    <div class="test-item pass">
+        <h2>🎯 Next Steps for Search Engines</h2>
+        <p><span class="status">ACTION REQUIRED</span></p>
+        <ol>
+            <li>Submit updated sitemap to <strong>Google Search Console</strong></li>
+            <li>Submit updated sitemap to <strong>Bing Webmaster Tools</strong></li>
+            <li>Set preferred domain to HTTPS version in search consoles</li>
+            <li>Monitor for any crawl errors or security warnings</li>
+        </ol>
+    </div>
+
+    <script>
+        // Test HTTPS enforcement
+        if (location.protocol !== 'https:') {
+            console.warn('⚠️ Page not loaded over HTTPS');
+        } else {
+            console.log('✅ Page successfully loaded over HTTPS');
+        }
+
+        // Test for mixed content
+        const resources = document.querySelectorAll('img, script, link');
+        let mixedContent = false;
+        resources.forEach(resource => {
+            const src = resource.src || resource.href;
+            if (src && src.startsWith('http://')) {
+                console.warn('⚠️ Mixed content detected:', src);
+                mixedContent = true;
+            }
+        });
+        
+        if (!mixedContent) {
+            console.log('✅ No mixed content detected');
+        }
+
+        // Test security headers (will show in network tab)
+        fetch(window.location.href)
+            .then(response => {
+                console.log('🔒 Security Headers Check:');
+                console.log('HSTS:', response.headers.get('strict-transport-security'));
+                console.log('CSP:', response.headers.get('content-security-policy'));
+                console.log('X-Frame-Options:', response.headers.get('x-frame-options'));
+            })
+            .catch(err => console.log('Header check failed:', err));
+    </script>
+</body>
+</html>

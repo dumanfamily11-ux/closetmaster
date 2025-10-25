@@ -96,7 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: formData,
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/x-www-form-urlencoded'
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-Requested-With': 'XMLHttpRequest'
                 }
             }).then(response => {
                 if (response.ok) {

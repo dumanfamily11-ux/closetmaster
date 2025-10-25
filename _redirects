@@ -1,0 +1,9 @@
+# Force HTTPS redirects
+http://toronto-closet-compa-32qq.bolt.host/* https://toronto-closet-compa-32qq.bolt.host/:splat 301!
+http://fabulous-peony-d0b6b4.netlify.app/* https://toronto-closet-compa-32qq.bolt.host/:splat 301!
+
+# Redirect all HTTP to HTTPS
+http://closetmasters.ca/* https://closetmasters.ca/:splat 301!
+
+# SPA fallback for client-side routing
+/*    /index.html   200
