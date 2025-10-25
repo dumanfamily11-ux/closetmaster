@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://toronto-closet-compa-32qq.bolt.host/sitemap.xml

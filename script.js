@@ -91,11 +91,12 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.disabled = true;
             
             // Send email using Formspree
-            fetch('https://formspree.io/f/ertdmn@gmail.com', {
+            fetch('https://formspree.io/f/xdkogkpv', {
                 method: 'POST',
                 body: formData,
                 headers: {
-                    'Accept': 'application/json'
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded'
                 }
             }).then(response => {
                 if (response.ok) {
